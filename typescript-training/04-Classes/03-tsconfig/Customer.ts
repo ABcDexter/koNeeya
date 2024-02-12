@@ -7,7 +7,7 @@ class Customer{
     constructor(theFirst: string, theLast: string){
         this.firstName = theFirst;
         this.lastName = theLast;
-
+        this.name = this.firstName + " " + this.lastName;
     };
 
 
@@ -18,7 +18,21 @@ class Customer{
     public getName(): string {
         return this.name;
     }
+
+    public get _firstName():string{
+        return this.firstName;
+    }
+
+    public set setterFName(param: string){
+        this.firstName = param;
+    }    
     
+    public get _lastName():string {
+        return this.lastName;
+    }
+    public set setterLName(param: string){
+        this.lastName = param;
+    }
 }
 /* 
 myCustomer.firstName = 'Anu';
@@ -29,6 +43,9 @@ let myCustomer = new Customer('','');
 
 myCustomer.setName('Anubhav', 'B');
 console.log(`Hello ${myCustomer.getName()} `);
+
+
+
 
 
 

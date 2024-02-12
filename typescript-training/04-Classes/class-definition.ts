@@ -12,7 +12,6 @@ class CustomerClass{
 
 }
 
-
 let myCustomerObject = new CustomerClass('Anubhav', 'B');
 
 console.log(`Hello ${myCustomerObject.firstName + " " + myCustomerObject.lastName} `);
