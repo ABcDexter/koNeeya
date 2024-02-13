@@ -20,7 +20,7 @@ class Shape {
         return this._y;
     }
     getInfo() {
-        return `x=${this._x}, radius=${this._y}`;
+        return `x=${this._x}, y=${this._y}`;
     }
 }
 exports.Shape = Shape;
