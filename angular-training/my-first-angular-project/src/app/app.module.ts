@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 
+//this is like the decorator
 @NgModule({
   declarations: [
     AppComponent
