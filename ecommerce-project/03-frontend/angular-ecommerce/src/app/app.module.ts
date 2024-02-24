@@ -4,7 +4,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { ProductListComponent } from './components/product-list/product-list.component';
 
-import {HttpClientModule} from '@angular/common/http';
+import {HttpClientModule} from '@angular/common/http'; // added import for the project
+import { ProductService } from './services/product.service';
 
 
 @NgModule({
@@ -14,9 +15,9 @@ import {HttpClientModule} from '@angular/common/http';
   ],
   imports: [
     BrowserModule,
-    HttpClientModule
+    HttpClientModule // added the import for this
   ],
-  providers: [],
+  providers: [ProductService], // inject our service into our front-end
   bootstrap: [AppComponent]
 })
 export class AppModule { }
