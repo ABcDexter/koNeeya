@@ -8,7 +8,7 @@ import { Product } from '../common/product';
 })
 export class ProductService {
 
-  private baseUrl = "http://local:8080/api/products";
+  private baseUrl = "http://localhost:8080/api/products"; // ENDPoint for products 
   
   constructor(private httpClient: HttpClient) {
   }
