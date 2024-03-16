@@ -7,6 +7,17 @@ import { ProductListComponent } from './components/product-list/product-list.com
 import {HttpClientModule} from '@angular/common/http'; // added import for the project
 import { ProductService } from './services/product.service';
 
+import { Routes, RouterModule } from '@angular/router';
+
+const routes : Routes= [ //order is important
+  {path: 'category/:id', component: ProductListComponent},
+  {path: 'category', component: ProductListComponent},
+  {path: 'products/:id', component: ProductListComponent},
+  {path: '', redirectTo: '/products', pathMatch: 'full'}, //empty route
+  {path: '**',redirectTo: '/products', pathMatch: 'full'} //generic wildcard
+
+
+];
 
 @NgModule({
   declarations: [
@@ -14,6 +25,7 @@ import { ProductService } from './services/product.service';
     ProductListComponent
   ],
   imports: [
+    RouterModule.forRoot(routes),
     BrowserModule,
     HttpClientModule // added the import for this
   ],
