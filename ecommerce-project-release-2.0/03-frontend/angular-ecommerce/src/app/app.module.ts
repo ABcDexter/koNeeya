@@ -12,7 +12,7 @@ import { Routes, RouterModule } from '@angular/router';
 const routes : Routes= [ //order is important
   {path: 'category/:id', component: ProductListComponent},
   {path: 'category', component: ProductListComponent},
-  {path: 'products/:id', component: ProductListComponent},
+  {path: 'products', component: ProductListComponent},
   {path: '', redirectTo: '/products', pathMatch: 'full'}, //empty route
   {path: '**',redirectTo: '/products', pathMatch: 'full'} //generic wildcard
 
