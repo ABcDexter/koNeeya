@@ -9,6 +9,7 @@ import { ProductCategory } from '../common/product-category';
 })
 export class ProductService {
   
+
   private baseUrl = "http://localhost:8080/api/products"; // ENDPoint for products 
   
   private categoryUrl = "http://localhost:8080/api/product-category"; // ENDPoint for productCagetories 
@@ -39,6 +40,19 @@ export class ProductService {
       ;
     }
     
+    searchProducts(theKeyword: string): Observable<Product[]>{
+
+      // build  URL based on search keyword 
+
+      const searchUrl = `${this.baseUrl}/search/findByNameContaining?name=${theKeyword}`;
+
+      console.log(`Search URL =${searchUrl}`);
+      return this.httpClient.get<GetResponseProducts>(searchUrl)
+      .pipe(
+        map(response => response._embedded.products)
+      );
+      ;
+    }
    
 }
 
