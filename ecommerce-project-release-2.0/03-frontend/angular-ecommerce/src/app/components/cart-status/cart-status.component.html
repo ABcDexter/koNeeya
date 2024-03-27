@@ -1,7 +1,7 @@
 <div class="cart-area d-n">
     <a href="shopping-detail.html">
-        <div class="total">0.00 
-            <span> 0</span> 
+        <div class="total">{{ totalPrice | currency: 'INR'}}
+            <span>{{ totalQuantity }}</span> 
         </div> 
         <i class="fa fa-shopping-cart" aria-hidden="true"></i>
     </a>

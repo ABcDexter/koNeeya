@@ -18,7 +18,9 @@ export class CartStatusComponent implements OnInit {
   }
 
   updateCartStatus(){
-    // when the new events are received, then make the assignments to update UI
+    // when the new events are received, 
+    // then make the assignments to update UI
+    // by Subscribing to events
     this.cartService.totalPrice.subscribe(
       data => this.totalPrice = data
     );
