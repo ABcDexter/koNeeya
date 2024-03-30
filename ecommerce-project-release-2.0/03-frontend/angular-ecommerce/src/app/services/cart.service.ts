@@ -43,6 +43,8 @@ export class CartService {
     // compute cart totals
     this.computerCartTotals();
   }
+
+
   computerCartTotals(){
 
     let totalPriceValue: number=0;///initialize with 0
@@ -73,6 +75,43 @@ export class CartService {
     console.log(`totalQuantity = ${totalQuantityValue} | total Price = ${totalPriceValue}`);
     console.log('______________________________________');
   }
+  
+
+  removeFromCart(theCartItem: CartItem){
+     
+    theCartItem.quantity--; 
+
+     // if there are NO items of theCartItem
+     if (theCartItem.quantity == 0 )
+     { //remove this from the cartItems
+        this.remove(theCartItem);
+     }
+     else{
+      this.computerCartTotals();
+     }
+  }
+
+  remove(theCartItem: CartItem){
+
+    /*
+    for(let i=0; i< this.cartItems.length ;i++){
+      console.log(`item ${i} = ${this.cartItems[i].name}`);
+    }
+    */
+    // get the index
+    const itemIndex = this.cartItems.findIndex( tempCartItem => tempCartItem.id === theCartItem.id );
+    console.log(`inside remove of CartService | item ${theCartItem.name} AT ${itemIndex}`); 
+
+    if(itemIndex > -1)
+      { 
+        this.cartItems.splice(itemIndex, 1);    
+        // console.log(`new CartItems = ${this.cartItems.toLocaleString}`);
+        this.computerCartTotals(); // this is neccessary as this function is being used by 2 methods in cart-details.components.ts
+      }
+
+  }
+  
+  
   
 
 }
